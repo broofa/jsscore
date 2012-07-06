@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Jsscore : A simple measure of Javascript performance" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Jsscore</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/broofa/jsscore">View on GitHub</a>
+
+          <h1 id="project_title">Jsscore</h1>
+          <h2 id="project_tagline">A simple measure of Javascript performance</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/broofa/jsscore/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/broofa/jsscore/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>What is a JS-Score?</h3>
+
+<p>A JS-Score is simple measure of Javascript performance.  <a href="http://jsscore.org">Find out your score</a>!</p>
+
+<h3>How are JS-Scores calculated?</h3>
+
+<p>JS-Scores are determined by finding <code>jsscore</code> such that ...</p>
+
+<pre><code>for (var i = 0, n = Math.pow(10, jsscore); i &lt; n; i++) {}
+</code></pre>
+
+<p>... will take exactly 1-second to run.</p>
+
+<p>In other words, a JS-Scores is the base-10 log of how quickly an empty for-loop runs, as measured in iterations/second.</p>
+
+<p>Want some code?  Here's <a href="https://gist.github.com/3056769">the reference jsscore() implementation</a></p>
+
+<h3>What does a JS-Score <em>mean</em>?</h3>
+
+<p>JS-Scores are measured on a base-10 logarithmic scale, meaning each full-point difference in score represents a 10X multiple in for-loop speed (while a half-point difference represents a ~3X multiple).</p>
+
+<p>In absolute terms, if a device - say an iPhone4  running Safari 5.1 - has a JS-Score of 8, we know it's capable of doing ~100M iterations/second.  And if we further find that another device - perhaps a Macbook Pro running Chrome 20 - has a score of 9, we know it has 10X the performance (at least where empty for-loops are concerned).  Or, conversely, if we find IE6 running in a VMWare instance has a score of 7, we can say it has performs roughly 10% as well as the iPhone+Safari, or 1% as well as the Macbook+Chrome.</p>
+
+<p>Make sense?</p>
+
+<h3>What's a JS-Score used for?</h3>
+
+<p>It's hoped that JS-Scores can serve at least two purposes:</p>
+
+<ol>
+<li>Provide a basis for device+browser performance when discussing 3rd-party benchmark data</li>
+<li>Enable performance-based feature customization in web apps</li>
+</ol><h3>"But empty for-loop performance isn't useful!"</h3>
+
+<p>Yes... and no.  An empty for-loop is the simplest possible benchmark construct.  As such, it's trivial for interpreters to optimize (i.e. it's as good an indicator of raw hardware performance as we have in Javascript-land).  It is also trivially easy to implement, meaning it's possible to compute a JS-Score on <em>any</em> JS-enabled device.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Jsscore maintained by <a href="https://github.com/broofa">broofa</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
